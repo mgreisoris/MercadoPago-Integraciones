@@ -1,0 +1,304 @@
+<html>
+
+<head>
+
+<style>
+.btn { background-repeat: repeat-x; background-color:#2C3176; border: 1px solid #2C3176; cursor: pointer; overflow: visible; padding: 3px 9px; color: #fff; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; } .btn:focus { -moz-box-shadow: 0 0 5px #4055A5; -webkit-box-shadow: 0 0 5px #4055A5; box-shadow: 0 0 5px #4055A5; } .btn:active { -moz-box-shadow: 0 0 0; -webkit-box-shadow: 0 0 0; box-shadow: 0 0 0; } /* Disabled */ .btn:disabled, .btn:disabled:hover, .btn:disabled:active, .btn:disabled:focus, /* Reinforces disabled state */ .btn.disabled { border: 1px solid #999; opacity: 0.3; filter: alpha(opacity=50); color: #f7f7f7; text-shadow: none; cursor: not-allowed; }
+
+.btn.primary { background-position: 0 -232px; font-size: 18px; height: 32px; line-height: 28px; } .btn.primary:hover { background-position: 0 -264px; } .btn.primary:active { background-position: 0 -296px; -moz-box-shadow: 0 0 0; -webkit-box-shadow: 0 0 0; box-shadow: 0 0 0; } .btn.primary:disabled, .btn.primary.disabled { background-position: 0 -328px; }
+</style>
+
+
+</head>
+
+<body>
+
+<form id="MP" name="MP" onsubmit="return revisarmonto()" action="create_preference.php" method="post" 
+ style="font-size:5px; font-weight:100; color:#999999; font-family:Arial, Helvetica, sans-serif;">
+ 
+	<input type="hidden" name="item_currency_1" value="ars" />
+	<input type="hidden" name="currency" value="ars" />
+	<input type="hidden" name="country_id" value="1" />
+	<input type="hidden" name="item_quantity_1" value="1" />
+	<input type="hidden" name="merchant" value="textilana@maurosergio.com">
+
+	
+<div align="center">
+	<table width="63%" style="border:1px solid#999999; border-radius: 40px;" bordercolorlight="#FF0000" bordercolordark="#000000">
+	<tr>
+		
+	</tr>
+
+	<tr>
+		<td align="center" style="font-size:14px; font-weight:bold; color:#999999; font-family:Arial, Helvetica, sans-serif;" height="60">
+		<img src="http://static.mlstatic.com/org-img/Manual/ManualMP/imgs/isologo.png"/>
+		</td>
+	</tr>
+	
+	
+	<tr>    
+		<td width="100%" align="left" valign="top" nowrap>
+
+<p>&nbsp;</p>
+<blockquote>
+	<p align="left">
+<!--Variables obligatorias-->
+
+
+  <table width="681">
+    <tr>
+		<td align="right" width="312"><b><label for="item_name_1">
+		<font size="3" face="Arial" color="#000000">N&uacute;mero de file*:</font></label></b></td>
+		<td align="left"><font color="#000000" face="Arial" size="2">
+		<input name="item_name_1"  type="text" id="item_name_1" style="font-weight: 700" required /> </font></td>
+    </tr>
+    <tr>
+      <td align="right" width="312"><b><label for="item_ammount_1">
+		<font size="3" face="Arial" color="#000000">Monto total:</font></label></b></td>
+      <td align="left"><font color="#000000" face="Arial" size="2">
+		<input  onKeyPress="return SoloNumerico(event, this);" Onblur="AplicoFormato(this)" id="item_ammount_1" name="item_ammount_1" style="font-weight: 700" required> 
+		<br>
+		</td>
+    </tr>
+    <tr>
+      <td align="right" width="312"><b><label for="buyer_name">
+		<font size="3" face="Arial" color="#000000">Nombre:</font></label></b></td>
+      <td align="left"><font color="#000000" face="Arial" size="2">
+		<input name="buyer_name" type="text" size="40" id="nombre" style="font-weight: 700" required/></font></td>
+    </tr>
+    <tr>
+      <td align="right" width="312"><b><label for="buyer_lastname">
+		<font size="3" face="Arial" color="#000000">Apellido:</font></label></b></td>
+      <td align="left"><font color="#000000" face="Arial" size="2">
+		<input name="buyer_lastname" type="text" id="apellido" size="40" style="font-weight: 700" required/></font></td>
+    </tr>
+    <tr>
+      <td align="right" width="312"><b><label for="agencia">
+		<font size="3" face="Arial" color="#000000">Agencia</font></label></b></td>
+      <td align="left"><font color="#000000" face="Arial" size="2">
+		<input name="buyer_phone" type="text" id="agencia" style="font-weight: 700" required/></font></td>
+    </tr>
+   
+    <tr>
+      <td align="right" width="312"><b><label for="buyer_document_type">
+		<font size="3" face="Arial" color="#000000">Tipo de Documento:</font></label></b></td>
+      <td align="left"><font color="#000000" face="Arial" size="2">
+		<select name="buyer_document_type" id="buyer_document_type" size="1" style="font-weight: 700">
+			<option value="dni">DNI</option>
+			<option value="cuil">CUIL</option>
+			<option value="cuit">CUIT</option>
+			<option value="le">LE</option>
+			<option value="lc">LC</option></select><b> </b></font>	</td>
+    </tr>
+    <tr>
+      <td align="right" width="312"><b><label for="buyer_document_number">
+		<font size="3" face="Arial" color="#000000">N&uacute;mero de Documento:</font></label></b></td>
+      <td align="left"><font color="#000000" face="Arial" size="2">
+		<input name="buyer_document_number" id="buyer_document_number"  type="number" style="font-weight: 700" required/></font></td>
+    </tr>
+    <tr>
+      <td align="right" width="312"><b><label for="buyer_email">
+		<font size="3" face="Arial" color="#000000">e-mail:</font></label></b></td>
+      <td align="left"><font color="#000000" face="Arial" size="2">
+		<input name="buyer_email" type="email" id="buyer_email" size="40" style="font-weight: 700" required /> *</font></td>
+    </tr>
+ 	</p>
+	</p>
+	<b><font face="Arial" color="#000000">
+
+    </td>
+    </tr>
+    </font></b>
+    </table>
+    <font color="#000000" face="Arial">
+	<p align="center"><font size="3" face="Arial" color="#000000">
+	
+	<li>Recuerde que ver&aacute; el cargo en el res&uacute;men de la tarjeta como <strong>MercadoPago </strong>. </li><br>
+	</font>
+	
+	<div align="center">
+	<table width="63%">
+	<!--<input type="submit"  value="Generar botón de pago" class="btn primary"  ></input> -->
+    <a class="btn btn-primary" onclick="$_generarLink();">Generar Link</a>
+
+	<p id="plink" href="" target="_blank" align="center" font size="1" face="Arial" color="#000000"></p> 
+	  
+</table>
+</div>
+	
+&nbsp
+&nbsp	
+
+
+	<script type="text/javascript">
+	
+    (function(){function $MPC_load(){window.$MPC_loaded !== true && (function(){var s = document.createElement("script");s.type = "text/javascript";s.async = true;
+    s.src = document.location.protocol+"//resources.mlstatic.com/mptools/render.js";
+    var x = document.getElementsByTagName('script')[0];x.parentNode.insertBefore(s, x);window.$MPC_loaded = true;})();}
+    window.$MPC_loaded !== true ? (window.attachEvent ? window.attachEvent('onload', $MPC_load) : window.addEventListener('load', $MPC_load, false)) : null;})();
+	
+	
+window.onload = function () {
+document.MP.nombre.focus();
+document.MP.addEventListener('submit', revisarmonto);
+}
+	
+</script>
+	
+	<!--PARTE COPIADA PARA MOSTRAR PREFERENCIA DE PAGO-->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="jquery.js"></script>
+	<script src="bootstrap.js"></script>
+	<script src="jquery.blockUI.js"></script>
+	<script src="mensajes-emergentes.js"></script>
+	<script src="bootbox.min.js"></script>
+	
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+
+	    });
+
+	    // FUNCION QUE LLAMA AL GENERADOR DE LINKS
+	    function $_generarLink() 
+		{
+
+			var descripcion = $("#item_name_1").val()
+				+ "  -  <b>Agencia</b>: " + $("#agencia").val()
+				+ "  -  Pas<br/>ajero: " + $("#nombre").val();
+//			var descripcion = $("#exampleInputFile").val()
+//				+ " - " + $("#exampleInputAgencia").val()
+//				+ " - " + $("#exampleInputPasajero").val();
+
+
+			if ($("#item_name_1").val() == "" || $("#agencia").val() == ""
+					|| $("#nombre").val() == "" || $("#item_ammount_1").val() == "") {
+				alert("Todos los campos son obligatorios. Completelos para poder generar el Link.");
+			} else 
+			
+			{
+				
+		        $.ajax(
+				{
+		            url:"create_preference.php",
+		            type:"POST",
+		            dataType:"html",
+		            data: {
+                            	cantidad: 1,
+								moneda: "ARS",
+		            	        monto: $("#item_ammount_1").val(),
+								file: $("#item_name_1").val(),
+								nombre:$("#nombre").val(),
+								apellido:$("#apellido").val(),
+								email:$("#buyer_email").val(),
+								tipo_dni:$("#buyer_document_type").val(),
+								nro:$("#buyer_document_number").val()
+		            	   },
+		            success: function(result) {
+	//	            	alert(result.response.sandbox_init_point); //URL PARA PRUEBAS
+					//alert(result); //URL FINAL
+						$("#plink").attr("href", result);
+						$("#plink").html(result);
+						
+		            },
+		            error: function (jqXHR, textStatus, errorThrown) {
+		                alert(textStatus + " - " + errorThrown);
+		            }
+		        });
+	    	}
+	    }
+	</script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+<div align="center" >
+	<table width="63%">
+		
+	<a href="https://www.mercadopago.com/mla/credit_card_promos.htm" target="_blank"> Ver Promociones</a><br>
+		
+	  <a href="https://www.mercadopago.com/mla/credit_card_promos.htm" target="_blank"><img src="https://imgmp.mlstatic.com/org-img/banners/ar/medios/575X40.jpg" title="MercadoPago - Medios de pago" alt="MercadoPago - Medios de pago" width="575" height="40"/ ></a>
+	  
+</table>
+</div>
+</p>
+	</p>
+</blockquote>
+      </form> 
+    </td>
+    </tr>
+    </table>
+    </div>
+	</form>
+    </body>
+</html>
+
+<!--Javascript para aceptar decimales-->
+<script language="javascript">
+
+function revisarmonto(evObject) {
+  if (MP.item_ammount_1.value > 0) {
+       MP.submit();
+  }
+   else 
+   //if (MP.item_ammount_1.value > 0)
+   {
+   alert('[ERROR] El campo Monto Total debe ser mayor a 0');
+   return false;
+  }
+  }
+function SoloNumerico(e, obj)
+{
+var sKey = -1;
+var bResult = true;
+var bPunto = (obj.value.indexOf(".") != -1);
+var lCantChars = obj.value.length;
+if (window.event)
+{
+sKey = e.keyCode;
+}
+else if (e.which)
+{
+sKey = e.which;
+}
+if (sKey > 10)
+{
+if (((sKey < 48 || sKey > 57) && (sKey != 46 || bPunto)) || (!bPunto &&
+lCantChars > 6 && sKey != 46))
+{
+bResult = false;
+}
+}
+return bResult;
+}
+function AplicoFormato(oText)
+{
+var aDec = oText.value.split('.');
+if(aDec.length > 1) {
+if(aDec[1].length == 1) {
+oText.value = aDec[0] + '.' + aDec[1].split('.')[0] + '0';
+}
+if(aDec[1].length == 0) {
+oText.value = aDec[0] + '.00';
+}
+if(aDec[1].length >= 2) {
+oText.value = aDec[0] + '.' + aDec[1].substr(0,2);
+}
+}
+else
+{
+oText.value = aDec + '.00';
+}
+}
+</script>
